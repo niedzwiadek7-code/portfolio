@@ -1,15 +1,17 @@
-import { Button } from "@/components/ui/button"
-import {HStack, Text} from "@chakra-ui/react"
+import Navbar from "@/components/Navbar";
+import {Profile} from "@/models";
 
 const Demo = () => {
+  const profile = new Profile(
+    "Damian Kliber"
+  )
+
   return (
-    <HStack>
-      <Button>Click me</Button>
-      <Button colorPalette='teal'>Click me</Button>
-      <Text
-        color='teal'
-      > Random text </Text>
-    </HStack>
+    <>
+      <Navbar
+        profile={JSON.parse(JSON.stringify(profile))}
+      />
+    </>
   )
 }
 
