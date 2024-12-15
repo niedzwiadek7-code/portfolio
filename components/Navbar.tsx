@@ -47,7 +47,7 @@ const Navbar: React.FC<Props> = ({
       >
         <Stack
           direction="row"
-          gap={8}
+          gap={4}
           style={{
             fontWeight: "bold"
           }}
