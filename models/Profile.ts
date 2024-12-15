@@ -13,6 +13,8 @@ export class Profile {
   headerName: string
   headerRole: string
   headerDesc: string
+  about: string
+  image: string
 
   socialMedia: SocialMedia
 
@@ -24,7 +26,9 @@ export class Profile {
     headerRole: string,
     headerDesc: string,
     socialMedia: SocialMedia,
-    color: string
+    color: string,
+    about: string,
+    image: string
   ) {
     this.name = name
     this.headerName = headerName
@@ -32,5 +36,7 @@ export class Profile {
     this.headerDesc = headerDesc
     this.socialMedia = socialMedia
     this.mainColor = color
+    this.about = about
+    this.image = image
   }
 }
