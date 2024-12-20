@@ -73,10 +73,16 @@ export class Experience {
 export class SocialMedia {
   linkedin: string
   github: string
+  mail: string
 
-  constructor(linkedin: string, github: string) {
+  constructor(
+    linkedin: string,
+    github: string,
+    mail: string
+  ) {
     this.linkedin = linkedin
     this.github = github
+    this.mail = mail
   }
 }
 

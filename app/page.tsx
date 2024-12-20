@@ -6,6 +6,7 @@ import About from "@/components/About";
 import Experience from "@/components/Experience";
 import {Badge} from "@/models/Profile";
 import Projects from "@/components/Projects";
+import Contact from "@/components/Contact";
 
 const Demo = () => {
   const profile = new Profile(
@@ -15,7 +16,8 @@ const Demo = () => {
     "I'm a full stack developer with a passion for creating beautiful and functional web applications.",
     {
       linkedin: "https://www.linkedin.com/in/damian-kliber/",
-      github: "https://"
+      github: "https://",
+      mail: 'mailto:'
     },
     'purple',
     `
@@ -127,6 +129,10 @@ const Demo = () => {
       />
       <Projects
         projects={profile.projects}
+        mainColor={profile.mainColor}
+      />
+      <Contact
+        socialMedia={profile.socialMedia}
         mainColor={profile.mainColor}
       />
     </>
