@@ -10,6 +10,41 @@ export class Badge {
   }
 }
 
+export class Link {
+  name: string
+  url: string
+
+  constructor(name: string, url: string) {
+    this.name = name
+    this.url = url
+  }
+}
+
+export class Project {
+  name: string
+  image: string
+  description: string
+  projectLink: string
+  githubLinks: Link[]
+  badges: Badge[]
+
+  constructor(
+    name: string,
+    image: string,
+    description: string,
+    projectLink: string,
+    githubLinks: Link[],
+    badges: Badge[]
+  ) {
+    this.name = name
+    this.image = image
+    this.description = description
+    this.projectLink = projectLink
+    this.githubLinks = githubLinks
+    this.badges = badges
+  }
+}
+
 export class Experience {
   title: string
   dateRange: DateRange
@@ -55,6 +90,7 @@ export class Profile {
 
   socialMedia: SocialMedia
   experience: Experience[]
+  projects: Project[]
 
   mainColor: string
 
@@ -67,7 +103,8 @@ export class Profile {
     color: string,
     about: string,
     image: string,
-    experience: Experience[]
+    experience: Experience[],
+    projects: Project[]
   ) {
     this.name = name
     this.headerName = headerName
@@ -78,5 +115,6 @@ export class Profile {
     this.about = about
     this.image = image
     this.experience = experience.sort((a, b) => b.dateRange.start.getDate() - a.dateRange.start.getDate())
+    this.projects = projects
   }
 }

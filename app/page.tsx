@@ -1,10 +1,11 @@
 import Navbar from "@/components/Navbar";
 import MainSection from "@/components/MainSection";
-import {DateRange, Profile, Experience as ExperienceModel} from "@/models";
+import {DateRange, Profile, Experience as ExperienceModel, Project, Link} from "@/models";
 import {HStack} from "@chakra-ui/react";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
 import {Badge} from "@/models/Profile";
+import Projects from "@/components/Projects";
 
 const Demo = () => {
   const profile = new Profile(
@@ -59,6 +60,59 @@ const Demo = () => {
           new Badge("Node.js", "green"),
         ]
       )
+    ],
+    [
+      new Project(
+        'Travel App',
+        'https://bit.ly/dan-abramov',
+        `
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non metus nec libero fermentum ultricies.
+        Nullam auctor, libero ac ultricies tincidunt, elit libero fermentum libero, nec fermentum libero libero ut nunc.
+        Nullam auctor, libero ac ultricies tincidunt, elit libero fermentum libero, nec fermentum libero libero ut nunc.
+        `,
+        'https://travel-app-frontend-henna.vercel.app/',
+        [
+          new Link('Frontend', 'https://travel-app-frontend-henna.vercel.app/'),
+          new Link('Backend', 'https://travel-app-backend-henna.herokuapp.com/')
+        ],
+        [
+          new Badge('React', 'blue'),
+          new Badge('Node.js', 'green'),
+          new Badge('TypeScript', 'blue')
+        ]
+      ),
+      new Project(
+        'Another Project',
+        'https://bit.ly/dan-abramov',
+        `
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non metus nec libero fermentum ultricies.
+        Nullam auctor, libero`,
+        'https://travel-app-frontend-henna.vercel.app/',
+        [
+          new Link('Frontend', 'https://travel-app-frontend-henna.vercel.app/'),
+          new Link('Backend', 'https://travel-app-backend-henna.herokuapp.com/')
+        ],
+        [
+          new Badge('React', 'blue'),
+          new Badge('Node.js', 'green'),
+        ]
+      ),
+      new Project(
+        'NEwest Project',
+        'https://bit.ly/dan-abramov',
+        `
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non metus nec libero fermentum ultricies.
+        Nullam auctor, libero`,
+        'https://travel-app-frontend-henna.vercel.app/',
+        [
+          new Link('Frontend', 'https://travel-app-frontend-henna.vercel.app/'),
+          new Link('Backend', 'https://travel-app-backend-henna.herokuapp.com/')
+        ],
+        [
+          new Badge('React', 'blue'),
+          new Badge('Node.js', 'green'),
+        ]
+      )
     ]
   )
 
@@ -69,6 +123,10 @@ const Demo = () => {
       <About profile={JSON.parse(JSON.stringify(profile))} />
       <Experience
         experience={profile.experience}
+        mainColor={profile.mainColor}
+      />
+      <Projects
+        projects={profile.projects}
         mainColor={profile.mainColor}
       />
     </>
