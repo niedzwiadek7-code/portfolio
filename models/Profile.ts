@@ -1,3 +1,40 @@
+import {DateRange} from "@/models/DateRange";
+
+export class Badge {
+  name: string
+  color: string
+
+  constructor(name: string, color: string) {
+    this.name = name
+    this.color = color
+  }
+}
+
+export class Experience {
+  title: string
+  dateRange: DateRange
+  role: string
+  logo: string
+  description: string
+  badges: Badge[]
+
+  constructor(
+    title: string,
+    dateRange: DateRange,
+    role: string,
+    logo: string,
+    description: string,
+    badges: Badge[]
+  ) {
+    this.title = title
+    this.dateRange = dateRange
+    this.role = role
+    this.logo = logo
+    this.description = description
+    this.badges = badges
+  }
+}
+
 export class SocialMedia {
   linkedin: string
   github: string
@@ -17,6 +54,7 @@ export class Profile {
   image: string
 
   socialMedia: SocialMedia
+  experience: Experience[]
 
   mainColor: string
 
@@ -28,7 +66,8 @@ export class Profile {
     socialMedia: SocialMedia,
     color: string,
     about: string,
-    image: string
+    image: string,
+    experience: Experience[]
   ) {
     this.name = name
     this.headerName = headerName
@@ -38,5 +77,6 @@ export class Profile {
     this.mainColor = color
     this.about = about
     this.image = image
+    this.experience = experience.sort((a, b) => b.dateRange.start.getDate() - a.dateRange.start.getDate())
   }
 }

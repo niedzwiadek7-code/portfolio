@@ -1,7 +1,6 @@
 import React from 'react'
 import {Profile} from "@/models";
 import {Box, Container, HStack, Image, Separator, Stack, Text} from "@chakra-ui/react";
-import NextImage from 'next/image'
 
 type Props = {
   profile: Profile
@@ -14,7 +13,7 @@ const About = ({profile}: Props) => {
         as={Box}
         textAlign={"center"}
         // spacing={{ base: 8, md: 14 }}
-        pb={{ base: 20, md: 36 }}
+        pb={{ base: 20, md: 10 }}
       >
         <Stack align="center" direction="row" px={4}>
           <HStack mx={4}>
@@ -52,7 +51,7 @@ const About = ({profile}: Props) => {
           </Box>
           <Text
             color={"gray.600"}
-            fontSize={"lg"}
+            // fontSize={"lg"}
             textAlign={"justify"}
           >
             {profile.about}
