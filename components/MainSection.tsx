@@ -1,7 +1,7 @@
 'use client'
 
 import React from "react";
-import {Box, Button, Container, createIcon, Heading, Icon, Stack, Text} from "@chakra-ui/react";
+import {Box, Button, Container, createIcon, Heading, Icon, Link, Stack, Text} from "@chakra-ui/react";
 import {Profile} from "@/models";
 import {useColorModeValue} from "@/components/ui/color-mode";
 
@@ -43,9 +43,9 @@ const MainSection: React.FC<Props> = ({
         <Heading
           fontWeight={600}
           fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
-          lineHeight={"110%"}
+          lineHeight={"120%"}
         >
-          {profile.headerName} <br />
+          Hej, tu {profile.firstName} <br />
           <Text as={"span"} color={`${profile.mainColor}.400`}>
             {profile.headerRole}
           </Text>
@@ -64,7 +64,6 @@ const MainSection: React.FC<Props> = ({
           position={"relative"}
         >
           <Button
-            colorScheme={profile.mainColor}
             bg={`${profile.mainColor}.400`}
             rounded={"full"}
             px={6}
@@ -72,14 +71,27 @@ const MainSection: React.FC<Props> = ({
               bg: `${profile.mainColor}.500`,
             }}
           >
-            Let&#39;s connect!
+            <Link
+              href={profile.socialMedia.linkedin}
+              variant='plain'
+              target="_blank"
+              color={useColorModeValue("white", "gray.800")}
+            >
+              Znajdź mnie na LinkedIn!
+            </Link>
           </Button>
           <Button
             variant="ghost"
             colorScheme={"blue"}
             size={"sm"}
           >
-            Contact Me
+            <Link
+              href={profile.socialMedia.mail}
+              variant='plain'
+              target="_blank"
+            >
+              Skontaktuj się ze mną
+            </Link>
           </Button>
           <Box>
             <Icon

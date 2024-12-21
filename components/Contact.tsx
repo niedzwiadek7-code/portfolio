@@ -9,7 +9,7 @@ import {
   Separator,
   Stack,
   Text,
-  Card, Badge, Heading, Center, IconButton, Icon,
+  Card, Badge, Heading, Center, IconButton, Icon, Link,
 } from "@chakra-ui/react";
 import {
   TimelineConnector,
@@ -44,7 +44,7 @@ const Experience = ({socialMedia, mainColor}: Props) => {
             <Text
               fontWeight={800}
             >
-              Contact
+              Kontakt
             </Text>
           </HStack>
           <Separator orientation="horizontal" />
@@ -64,12 +64,24 @@ const Experience = ({socialMedia, mainColor}: Props) => {
               textAlign={"center"}
               gap={4}
             >
-              <Heading fontSize={"3xl"}>Let&#39;s stay in touch!</Heading>
+              <Heading fontSize={"3xl"}>
+                Pozostańmy w kontakcie
+              </Heading>
               {/*<Text color={"gray.600"} fontSize={"xl"} px={4}>*/}
               {/*  {profile.contact}*/}
               {/*</Text>*/}
-              <Text color={`${mainColor}.500`} fontWeight={600} fontSize={"lg"} px={4}>
-                {socialMedia.mail}
+              <Text
+                fontWeight={600}
+                fontSize={"lg"}
+                px={4}
+              >
+                <Link
+                  color={`${mainColor}.500`}
+                  href={socialMedia.mail}
+                  variant='plain'
+                >
+                  {socialMedia.mail.split("mailto:")[1]}
+                </Link>
               </Text>
               <Center>
                 <HStack pt={4} gap={6}>

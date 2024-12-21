@@ -44,7 +44,7 @@ const Experience = ({experience, mainColor}: Props) => {
             <Text
               fontWeight={800}
             >
-              Experience
+              Doświadczenie
             </Text>
           </HStack>
           <Separator orientation="horizontal" />
@@ -87,8 +87,23 @@ const Experience = ({experience, mainColor}: Props) => {
                       </div>
 
                       <Card.Root size="sm">
-                        <Card.Body textStyle="sm" lineHeight="tall">
-                          {exp.description}
+                        <Card.Body
+                          display="flex"
+                          flexDirection="column"
+                          flexWrap="wrap"
+                          textStyle="sm"
+                          lineHeight="tall"
+                        >
+                          <Text
+                            fontWeight="bold"
+                            textStyle="xl"
+                            pb={2}
+                          >
+                            {exp.role}
+                          </Text>
+                          <Text>
+                            {exp.description}
+                          </Text>
                         </Card.Body>
 
                         <Card.Footer

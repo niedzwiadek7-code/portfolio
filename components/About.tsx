@@ -22,8 +22,9 @@ const About = ({profile}: Props) => {
             </Text>
             <Text
               fontWeight={800}
+              width={70}
             >
-              About
+              O mnie
             </Text>
           </HStack>
           <Separator orientation="horizontal" />

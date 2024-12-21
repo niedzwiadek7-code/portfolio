@@ -97,8 +97,9 @@ export class SocialMedia {
 }
 
 export class Profile {
+  firstName: string
+  lastName: string
   name: string
-  headerName: string
   headerRole: string
   headerDesc: string
   about: string
@@ -111,8 +112,8 @@ export class Profile {
   mainColor: string
 
   constructor(
-    name: string,
-    headerName: string,
+    firstName: string,
+    lastName: string,
     headerRole: string,
     headerDesc: string,
     socialMedia: SocialMedia,
@@ -122,8 +123,9 @@ export class Profile {
     experience: Experience[],
     projects: Project[]
   ) {
-    this.name = name
-    this.headerName = headerName
+    this.firstName = firstName
+    this.lastName = lastName
+    this.name = `${firstName} ${lastName}`
     this.headerRole = headerRole
     this.headerDesc = headerDesc
     this.socialMedia = socialMedia

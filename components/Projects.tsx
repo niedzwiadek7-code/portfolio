@@ -32,7 +32,7 @@ const Projects = ({projects, mainColor}: Props) => {
             <Text
               fontWeight={800}
             >
-              Experience
+              Projekty
             </Text>
           </HStack>
           <Separator orientation="horizontal" />
@@ -87,10 +87,16 @@ const Projects = ({projects, mainColor}: Props) => {
                       gap={4}
                     >
                       <Card.Title> {project.name} </Card.Title>
-                      <Card.Description>
+                      <Card.Description
+                        display={"flex"}
+                        flexDirection={"column"}
+                        flexWrap={"wrap"}
+                      >
                         {project.description}
                       </Card.Description>
-                      <HStack>
+                      <HStack
+                        wrap={"wrap"}
+                      >
                         {
                           project.badges.map((badge) => (
                             <Badge key={badge.name} colorPalette={badge.color}>
