@@ -29,7 +29,7 @@ type Props = {
 const Experience = ({experience, mainColor}: Props) => {
   console.log(experience[0].dateRange.toString())
   return (
-    <Container maxW={"3xl"} id="about">
+    <Container maxW={"3xl"} id="experience">
       <Stack
         as={Box}
         // textAlign={"center"}

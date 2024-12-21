@@ -17,7 +17,7 @@ type Props = {
 
 const Projects = ({projects, mainColor}: Props) => {
   return (
-    <Container maxW={"3xl"} id="about">
+    <Container maxW={"3xl"} id="projects">
       <Stack
         as={Box}
         // textAlign={"center"}

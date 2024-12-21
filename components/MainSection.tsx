@@ -29,7 +29,7 @@ const MainSection: React.FC<Props> = ({
     <Container
       height={"100vh"}
       maxW={"3xl"}
-      id="hero"
+      id="mainSection"
       display={"flex"}
       flexDirection={"column"}
       justifyContent={"center"}
