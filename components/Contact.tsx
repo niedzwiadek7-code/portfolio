@@ -72,24 +72,24 @@ const Experience = ({socialMedia, mainColor}: Props) => {
                 {socialMedia.mail}
               </Text>
               <Center>
-                <HStack pt={4} gap={8}>
+                <HStack pt={4} gap={6}>
                   <Icon
                     onClick={() => window.open(socialMedia.linkedin, "_blank")}
-                    size='2xl'
+                    size='xl'
                     cursor='pointer'
                   >
                     <FaLinkedin />
                   </Icon>
                   <Icon
                     onClick={() => window.open(socialMedia.github, "_blank")}
-                    size='2xl'
+                    size='xl'
                     cursor='pointer'
                   >
                     <FaGithub />
                   </Icon>
                   <Icon
                     onClick={() => window.open(socialMedia.mail, "_blank")}
-                    size='2xl'
+                    size='xl'
                     cursor='pointer'
                   >
                     <FaEnvelope />
