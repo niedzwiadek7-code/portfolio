@@ -44,7 +44,11 @@ const Projects = ({projects, mainColor}: Props) => {
           flexDirection={'column'}
           // align="flex-start"
           // justify="center"
-          px={12}
+          px={{
+            base: 0,
+            sm: 4,
+            md: 12
+          }}
           py={4}
           gap={6}
         >
@@ -55,12 +59,23 @@ const Projects = ({projects, mainColor}: Props) => {
                   key={project.name}
                   rounded={"md"}
                   shadow={"md"}
-                  flexDirection="row"
+                  flexDirection={{
+                    base: "column",
+                    sm: "row"
+                  }}
                   overflow={"hidden"}
                 >
                   <Image
                     objectFit={"cover"}
-                    maxW={"200px"}
+                    maxW={{
+                      base: "100%",
+                      // sm: "40%",
+                      sm: "200px"
+                    }}
+                    maxH={{
+                      base: "200px",
+                      sm: '100%'
+                    }}
                     src={project.image}
                     alt={project.name}
                   />

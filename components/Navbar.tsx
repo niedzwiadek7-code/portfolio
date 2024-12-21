@@ -1,29 +1,68 @@
 'use client';
 
-import React from "react";
+import React, {useState} from "react";
 import {
   Flex, Stack,
-  // useMediaQuery,
-  Button, IconButton
+  useMediaQuery,
+  Button, IconButton,
 } from "@chakra-ui/react";
 import {
+  HamburgerIcon,
   MoonIcon,
   SunIcon
 } from "@chakra-ui/icons";
 import {useColorMode, useColorModeValue} from "@/components/ui/color-mode";
 import {Avatar} from "@/components/ui/avatar";
-import {Profile} from "@/models";
+import {Profile, Section} from "@/models";
+import {
+  DrawerBackdrop, DrawerBody, DrawerContent, DrawerHeader,
+  DrawerRoot, DrawerTrigger
+} from "@/components/ui/drawer";
 
 type Props = {
   profile: Profile
+  sections: Section[]
+}
+
+type SectionButtonProps = {
+  section: Section
+  scrollTo: (id: string) => void
+  functionToMake?: () => void
+}
+
+const SectionButton: React.FC<SectionButtonProps> = ({
+  section,
+  scrollTo,
+  functionToMake
+}) => {
+  return (
+    <Button
+      variant="ghost"
+      style={{
+        fontWeight: "bold"
+      }}
+      onClick={() => {
+        scrollTo(section.id)
+        if (functionToMake) {
+          functionToMake()
+        }
+      }}
+    >
+      {section.name}
+    </Button>
+  )
 }
 
 const Navbar: React.FC<Props> = ({
-  profile
+  profile,
+  sections
 }) => {
-  // const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
+  const [isLargerThan768] = useMediaQuery(["(min-width: 768px)"], {
+    ssr: false
+  });
   const { colorMode, toggleColorMode } = useColorMode();
   const backgroundColor = useColorModeValue("gray.100", "gray.900");
+  const [open, setOpen] = useState(false);
 
   const scrollTo = (id: string) => {
     const element = document.getElementById(id);
@@ -69,42 +108,15 @@ const Navbar: React.FC<Props> = ({
             fontWeight: "bold"
           }}
         >
-          <Button
-            variant="ghost"
-            style={{
-              fontWeight: "bold"
-            }}
-            onClick={() => scrollTo("about")}
-          >
-            About
-          </Button>
-          <Button
-            variant="ghost"
-            style={{
-              fontWeight: "bold"
-            }}
-            onClick={() => scrollTo("experience")}
-          >
-            Experience
-          </Button>
-          <Button
-            variant="ghost"
-            style={{
-              fontWeight: "bold"
-            }}
-            onClick={() => scrollTo("projects")}
-          >
-            Projects
-          </Button>
-          <Button
-            variant="ghost"
-            style={{
-              fontWeight: "bold"
-            }}
-            onClick={() => scrollTo("contact")}
-          >
-            Contact
-          </Button>
+          {
+            isLargerThan768 && sections.map(section => (
+              <SectionButton
+                key={section.id}
+                section={section}
+                scrollTo={scrollTo}
+              />
+            ))
+          }
 
           <IconButton
             variant="subtle"
@@ -112,6 +124,47 @@ const Navbar: React.FC<Props> = ({
           >
             {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
           </IconButton>
+
+          {
+            !isLargerThan768 && (
+              <DrawerRoot
+                placement='top'
+                open={open}
+                onOpenChange={e => setOpen(e.open)}
+              >
+                <DrawerBackdrop />
+                <DrawerTrigger asChild>
+                  <IconButton
+                    variant="subtle"
+                    onClick={() => setOpen(true)}
+                  >
+                    <HamburgerIcon />
+                  </IconButton>
+                </DrawerTrigger>
+
+                <DrawerContent>
+                  <DrawerHeader>
+                    <DrawerBody
+                      padding={0}
+                    >
+                      <Stack>
+                        {
+                          sections.map(section => (
+                            <SectionButton
+                              key={section.id}
+                              section={section}
+                              scrollTo={scrollTo}
+                              functionToMake={() => setOpen(false)}
+                            />
+                          ))
+                        }
+                      </Stack>
+                    </DrawerBody>
+                  </DrawerHeader>
+                </DrawerContent>
+              </DrawerRoot>
+            )
+          }
         </Stack>
       </Flex>
     </Flex>

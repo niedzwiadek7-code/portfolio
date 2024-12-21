@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import MainSection from "@/components/MainSection";
-import {DateRange, Profile, Experience as ExperienceModel, Project, Link} from "@/models";
+import {DateRange, Profile, Experience as ExperienceModel, Project, Link, Section} from "@/models";
 import {HStack} from "@chakra-ui/react";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
@@ -47,7 +47,11 @@ const Demo = () => {
         [
           new Badge("React", "blue"),
           new Badge("Node.js", "green"),
-          new Badge("TypeScript", "blue")
+          new Badge("TypeScript", "blue"),
+          new Badge("GraphQL", "pink"),
+          new Badge("PostgreSQL", "blue"),
+          new Badge("Docker", "blue"),
+          new Badge("AWS", "yellow"),
         ]
       ),
       new ExperienceModel(
@@ -118,9 +122,19 @@ const Demo = () => {
     ]
   )
 
+  const sections = [
+    new Section('about', 'About'),
+    new Section('experience', 'Experience'),
+    new Section('projects', 'Projects'),
+    new Section('contact', 'Contact'),
+  ]
+
   return (
     <>
-      <Navbar profile={JSON.parse(JSON.stringify(profile))} />
+      <Navbar
+        profile={JSON.parse(JSON.stringify(profile))}
+        sections={JSON.parse(JSON.stringify(sections))}
+      />
       <MainSection profile={JSON.parse(JSON.stringify(profile))} />
       <About profile={JSON.parse(JSON.stringify(profile))} />
       <Experience

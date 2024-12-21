@@ -33,6 +33,7 @@ const MainSection: React.FC<Props> = ({
       display={"flex"}
       flexDirection={"column"}
       justifyContent={"center"}
+      padding={{ base: 12 }}
     >
       <Stack
         as={Box}

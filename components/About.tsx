@@ -1,6 +1,6 @@
 import React from 'react'
 import {Profile} from "@/models";
-import {Box, Container, HStack, Image, Separator, Stack, Text} from "@chakra-ui/react";
+import {Box, Container, HStack, Image, Separator, Stack, Text, useMediaQuery} from "@chakra-ui/react";
 
 type Props = {
   profile: Profile
@@ -38,15 +38,33 @@ const About = ({profile}: Props) => {
           gap={10}
         >
           <Box
-            float={"left"}
-            pr={4}
+            float={{
+              base: "none",
+              sm: "left",
+            }}
+            display={{
+              base: 'flex',
+              sm: 'block'
+            }}
+            justifyContent='center'
+            width={{
+              base: '100%',
+              sm: 'auto'
+            }}
+            pr={{
+              base: 2,
+              sm: 4,
+            }}
+            pb={{
+              base: 4,
+              sm: 0,
+            }}
           >
             <Image
               rounded="md"
               src={profile.image}
               alt={profile.name}
               width={150}
-              // height={500}
             />
           </Box>
           <Text

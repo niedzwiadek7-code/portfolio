@@ -55,7 +55,11 @@ const Experience = ({experience, mainColor}: Props) => {
             direction="row"
             // align="flex-start"
             // justify="center"
-            px={12}
+            px={{
+              base: 0,
+              sm: 4,
+              md: 12,
+            }}
             py={4}
             gap={10}
           >
@@ -87,7 +91,11 @@ const Experience = ({experience, mainColor}: Props) => {
                           {exp.description}
                         </Card.Body>
 
-                        <Card.Footer>
+                        <Card.Footer
+                          display="flex"
+                          gap={2}
+                          flexWrap="wrap"
+                        >
                           {
                             exp.badges.map((badge, index) => (
                               <Badge
