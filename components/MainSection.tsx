@@ -26,13 +26,18 @@ const MainSection: React.FC<Props> = ({
   profile
 }) => {
   return (
-    <Container maxW={"3xl"} id="hero">
+    <Container
+      height={"100vh"}
+      maxW={"3xl"}
+      id="hero"
+      display={"flex"}
+      flexDirection={"column"}
+      justifyContent={"center"}
+    >
       <Stack
         as={Box}
         textAlign={"center"}
         gap={{ base: 8, md: 14 }}
-        pb={{ base: 20, md: 36 }}
-        pt={{ base: 36, md: 52 }}
       >
         <Heading
           fontWeight={600}
