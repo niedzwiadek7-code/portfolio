@@ -115,7 +115,7 @@ const Projects = ({projects, mainColor}: Props) => {
                           href={project.projectLink}
                           target="_blank"
                         >
-                          Visit Page
+                          Zobacz projekt
                         </Link>
                       </Button>
                     </Card.Footer>

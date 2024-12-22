@@ -13,7 +13,7 @@ const Demo = () => {
     "Kliber",
     "Programista Stron Internetowych",
     `
-    Jestem programistą z zamiłowaniem do tworzenia sludnych stron internetowych, które są zarówno piękne jak i funkcjonalne. 
+    Jestem programistą z zamiłowaniem do tworzenia schludnych stron internetowych, które są zarówno piękne jak i funkcjonalne. 
     W swojej pracy stawiam na jakość i dbałość o każdy szczegół.
     `,
     {
