@@ -81,7 +81,7 @@ Zaufaj mi, jeśli chcesz wyróżnić swoją markę w sieci. Niezależnie od tego
       ),
       new Project(
         'Explore Places',
-        'https://queerintheworld.com/wp-content/uploads/2018/12/Gay-Greece-11.jpeg.webp',
+        '/assets/explore-places.jpeg',
         `
         Jest to aplikacja mobilna, która w założeniu ma przypominać Tindera, jednak zamiast osób zawierać różne miejsca z świata.
         Użytkownik ma możliwość przeglądania różnych miejsc na świecie, a także dodawania swoich ulubionych miejsc do ulubionych.
