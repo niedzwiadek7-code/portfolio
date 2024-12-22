@@ -3,14 +3,13 @@
 import React, {useState} from "react";
 import {
   Flex, Stack,
-  useMediaQuery,
-  Button, IconButton,
+  Button, IconButton, Box,
 } from "@chakra-ui/react";
 import {
-  HamburgerIcon,
-  MoonIcon,
-  SunIcon
-} from "@chakra-ui/icons";
+  FaHamburger,
+  FaMoon,
+  FaSun
+} from "react-icons/fa";
 import {useColorMode, useColorModeValue} from "@/components/ui/color-mode";
 import {Avatar} from "@/components/ui/avatar";
 import {Profile, Section} from "@/models";
@@ -57,9 +56,6 @@ const Navbar: React.FC<Props> = ({
   profile,
   sections
 }) => {
-  const [isLargerThan768] = useMediaQuery(["(min-width: 768px)"], {
-    ssr: false
-  });
   const { colorMode, toggleColorMode } = useColorMode();
   const backgroundColor = useColorModeValue("gray.100", "gray.900");
   const [open, setOpen] = useState(false);
@@ -108,25 +104,38 @@ const Navbar: React.FC<Props> = ({
             fontWeight: "bold"
           }}
         >
-          {
-            isLargerThan768 && sections.map(section => (
-              <SectionButton
-                key={section.id}
-                section={section}
-                scrollTo={scrollTo}
-              />
-            ))
-          }
+
+          <Box
+            display={{
+              base: "none",
+              md: "block"
+            }}
+          >
+            {
+              sections.map(section => (
+                <SectionButton
+                  key={section.id}
+                  section={section}
+                  scrollTo={scrollTo}
+                />
+              ))
+            }
+          </Box>
 
           <IconButton
             variant="subtle"
             onClick={toggleColorMode}
           >
-            {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+            {colorMode === "light" ? <FaMoon /> : <FaSun />}
           </IconButton>
 
-          {
-            !isLargerThan768 && (
+
+            <Box
+                display={{
+                  base: "block",
+                  md: "none"
+              }}
+              >
               <DrawerRoot
                 placement='top'
                 open={open}
@@ -138,7 +147,7 @@ const Navbar: React.FC<Props> = ({
                     variant="subtle"
                     onClick={() => setOpen(true)}
                   >
-                    <HamburgerIcon />
+                    <FaHamburger />
                   </IconButton>
                 </DrawerTrigger>
 
@@ -163,8 +172,8 @@ const Navbar: React.FC<Props> = ({
                   </DrawerHeader>
                 </DrawerContent>
               </DrawerRoot>
-            )
-          }
+              </Box>
+
         </Stack>
       </Flex>
     </Flex>

@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import {Experience as ExperienceModel, SocialMedia} from "@/models";
+import {SocialMedia} from "@/models";
 import {
   Box,
   Container,
@@ -9,17 +9,8 @@ import {
   Separator,
   Stack,
   Text,
-  Card, Badge, Heading, Center, IconButton, Icon, Link,
+  Heading, Center, Icon, Link,
 } from "@chakra-ui/react";
-import {
-  TimelineConnector,
-  TimelineContent,
-  TimelineDescription,
-  TimelineItem,
-  TimelineRoot,
-  TimelineTitle
-} from "@/components/ui/timeline";
-import {Avatar} from "@/components/ui/avatar";
 import {FaEnvelope, FaGithub, FaLinkedin} from "react-icons/fa6";
 
 type Props = {

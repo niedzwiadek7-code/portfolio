@@ -1,6 +1,6 @@
 import React from 'react'
 import {Profile} from "@/models";
-import {Box, Container, HStack, Image, Separator, Stack, Text, useMediaQuery} from "@chakra-ui/react";
+import {Box, Container, HStack, Image, Separator, Stack, Text} from "@chakra-ui/react";
 
 type Props = {
   profile: Profile

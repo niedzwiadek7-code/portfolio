@@ -4,13 +4,11 @@ import {
   Box,
   Container,
   HStack,
-  Image,
   Separator,
   Stack,
   Text,
   Card, Badge,
 } from "@chakra-ui/react";
-import {LuCheck, LuPackage, LuShip} from "react-icons/lu";
 import {
   TimelineConnector,
   TimelineContent,
