@@ -81,7 +81,7 @@ Zaufaj mi, jeśli chcesz wyróżnić swoją markę w sieci. Niezależnie od tego
       ),
       new Project(
         'Explore Places',
-        '/assets/explore-places.jpeg',
+        '/images/explore-places.jpeg',
         `
         Jest to aplikacja mobilna, która w założeniu ma przypominać Tindera, jednak zamiast osób zawierać różne miejsca z świata.
         Użytkownik ma możliwość przeglądania różnych miejsc na świecie, a także dodawania swoich ulubionych miejsc do ulubionych.
