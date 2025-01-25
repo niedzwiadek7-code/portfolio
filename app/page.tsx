@@ -99,7 +99,29 @@ Zaufaj mi, jeśli chcesz wyróżnić swoją markę w sieci. Niezależnie od tego
           new Badge('Vercel', 'black'),
           new Badge('Expo', 'black'),
         ]
-      )
+      ),
+      new Project(
+        'Górska Odznaka Turystyczna',
+        'https://got-frontend-beige.vercel.app/static/media/theme.55385d4fd5e865cd4d04.jpg',
+        `
+        Jest to aplikacja webowa, która ma na celu ułatwienie zdobywania górskich odznak turystycznych.
+        Aplikacja ma możliwość śledzenie zdobytych odznak i dokumentowanie odbytych przez użytkownika wycieczek.
+        Aplikacja pozwola przodownikowi na ocenianie wycieczek turystów i ich zaliczania bądź odrzucania.
+        Do aplikacji dołączony jest również panel administracyjny, który pozwala na zarządzanie użytkownikami, trasami, odznakami oraz wycieczkami.
+        `,
+        'https://got-frontend-beige.vercel.app//',
+        [
+          new Link('Frontend', 'https://got-frontend-beige.vercel.app/'),
+          new Link('Backend', 'https://got-backend-three.vercel.app/')
+        ],
+        [
+          new Badge('React', 'blue'),
+          new Badge('TypeScript', 'blue'),
+          new Badge('Vercel', 'black'),
+          new Badge('Laravel', 'red'),
+          new Badge('Leaflet', 'green'),
+        ]
+      ),
     ]
   )
 
