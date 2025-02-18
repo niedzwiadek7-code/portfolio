@@ -122,6 +122,24 @@ Zaufaj mi, jeśli chcesz wyróżnić swoją markę w sieci. Niezależnie od tego
           new Badge('Leaflet', 'green'),
         ]
       ),
+      new Project(
+        'Chess App',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Chess_pieces_close_up.jpg/640px-Chess_pieces_close_up.jpg',
+        `
+          Prosta aplikacja szachowa dla dwóch graczy na jednym komputerze.
+           Umożliwia śledzenie notacji ruchowej i rozgrywkę w ograniczonym czasie. 
+           Minimalistyczny interfejs, skupiony na podstawowej funkcjonalności gry.
+        `,
+        'https://chess-gwl40mbe0-damianklibergmailcoms-projects.vercel.app/',
+        [
+          new Link('Frontend', 'https://github.com/niedzwiadek7-code/chess/'),
+        ],
+        [
+          new Badge('Vue', 'green'),
+          new Badge('Vercel', 'black'),
+          new Badge('TypeScript', 'blue'),
+        ]
+      )
     ]
   )
 
