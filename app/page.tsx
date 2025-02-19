@@ -68,8 +68,8 @@ Zaufaj mi, jeśli chcesz wyróżnić swoją markę w sieci. Niezależnie od tego
         `,
         'https://travel-app-frontend-henna.vercel.app/',
         [
-          new Link('Frontend', 'https://travel-app-frontend-henna.vercel.app/'),
-          new Link('Backend', 'https://travel-app-backend-henna.herokuapp.com/')
+          new Link('Frontend', 'https://github.com/niedzwiadek7-code/travel-app-frontend', 'frontend'),
+          new Link('Backend', 'https://github.com/niedzwiadek7-code/travel-app-backend', 'backend')
         ],
         [
           new Badge('React', 'blue'),
@@ -77,6 +77,7 @@ Zaufaj mi, jeśli chcesz wyróżnić swoją markę w sieci. Niezależnie od tego
           new Badge('PostgresSQL', 'blue'),
           new Badge('NestJS', 'green'),
           new Badge('Vercel', 'black'),
+          new Badge('RWD', 'black'),
         ]
       ),
       new Project(
@@ -89,8 +90,8 @@ Zaufaj mi, jeśli chcesz wyróżnić swoją markę w sieci. Niezależnie od tego
         `,
         '',
         [
-          new Link('Frontend', 'https://travel-app-frontend-henna.vercel.app/'),
-          new Link('Backend', 'https://travel-app-backend-henna.herokuapp.com/')
+          new Link('Frontend', 'https://github.com/niedzwiadek7-code/explore-places-frontend/', 'frontend'),
+          new Link('Backend', 'https://github.com/niedzwiadek7-code/explore-places-backend', 'backend')
         ],
         [
           new Badge('React Native', 'blue'),
@@ -111,8 +112,8 @@ Zaufaj mi, jeśli chcesz wyróżnić swoją markę w sieci. Niezależnie od tego
         `,
         'https://got-frontend-beige.vercel.app//',
         [
-          new Link('Frontend', 'https://got-frontend-beige.vercel.app/'),
-          new Link('Backend', 'https://got-backend-three.vercel.app/')
+          new Link('Frontend', 'https://github.com/niedzwiadek7-code/got-frontend', 'frontend'),
+          new Link('Backend', 'https://github.com/niedzwiadek7-code/got-backend', 'backend')
         ],
         [
           new Badge('React', 'blue'),
@@ -120,6 +121,27 @@ Zaufaj mi, jeśli chcesz wyróżnić swoją markę w sieci. Niezależnie od tego
           new Badge('Vercel', 'black'),
           new Badge('Laravel', 'red'),
           new Badge('Leaflet', 'green'),
+        ]
+      ),
+      new Project(
+        'Canvas Editor',
+        'https://bytefine-recruitment-app.vercel.app/static/media/startimage.171a6c4039b2347e51a7.png',
+        `
+        Jest to aplikacja webowa, która pozwala na tworzenie plakatów w formie kolaży.
+        Użytkownik ma możliwość dodawania tekstu, obrazów oraz tła do swojego plakatu.
+        Następnie użytkownik może zapisać swoje dzieło w formie pliku PNG.
+        Aplikacja jest w pełni responsywna i działa na każdym urządzeniu.
+        `,
+        'https://bytefine-recruitment-app.vercel.app/',
+        [
+          new Link('Frontend', 'https://github.com/niedzwiadek7-code/bytefine-recruitment-app', 'frontend'),
+        ],
+        [
+          new Badge('React', 'blue'),
+          new Badge('Tailwind', 'blue'),
+          new Badge('TypeScript', 'blue'),
+          new Badge('Vercel', 'black'),
+          new Badge('RWD', 'black'),
         ]
       ),
       new Project(
@@ -132,7 +154,7 @@ Zaufaj mi, jeśli chcesz wyróżnić swoją markę w sieci. Niezależnie od tego
         `,
         'https://chess-gwl40mbe0-damianklibergmailcoms-projects.vercel.app/',
         [
-          new Link('Frontend', 'https://github.com/niedzwiadek7-code/chess/'),
+          new Link('Frontend', 'https://github.com/niedzwiadek7-code/chess/', 'frontend'),
         ],
         [
           new Badge('Vue', 'green'),

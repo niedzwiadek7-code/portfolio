@@ -9,6 +9,9 @@ import {
   Text,
   Card, Badge, Image, Button, Link,
 } from "@chakra-ui/react";
+import {FaGithub, FaReact, FaServer, FaBook} from "react-icons/fa";
+import { IconType } from "react-icons/lib";
+import {LinkType} from "@/models/Profile";
 
 type Props = {
   projects: ProjectModel[],
@@ -16,6 +19,16 @@ type Props = {
 }
 
 const Projects = ({projects, mainColor}: Props) => {
+  const getLinkIcon = (linkName: LinkType): IconType => {
+    const iconMap: Record<LinkType, IconType> = {
+      'frontend': FaReact,
+      'backend': FaServer,
+      'docs': FaBook,
+    };
+
+    return iconMap[linkName] || FaGithub;
+  };
+
   return (
     <Container maxW={"3xl"} id="projects">
       <Stack
@@ -106,18 +119,55 @@ const Projects = ({projects, mainColor}: Props) => {
                         }
                       </HStack>
                     </Card.Body>
-                    <Card.Footer>
-                      <Button
-                        variant="subtle"
+                    <Card.Footer
+                      display="flex"
+                      gap={3}
+                      flexWrap={"wrap"}
+                      justifyContent={"flex-end"}
+                      alignItems={"center"}
+                    >
+                      <Stack
+                        direction={{
+                          base: "column",
+                          sm: "row"
+                        }}
+                        width={"100%"}
+                        gap={2}
                       >
-                        <Link
-                          variant="plain"
-                          href={project.projectLink}
-                          target="_blank"
+                        <HStack>
+                          {project.githubLinks.map((link) => {
+                            const Icon = getLinkIcon(link.type);
+                            return (
+                              <Button
+                                key={link.url}
+                                variant="ghost"
+                                colorScheme={mainColor}
+                                size="sm"
+                              >
+                                <Link
+                                  href={link.url}
+                                  target="_blank"
+                                  _hover={{ textDecoration: "none" }}
+                                >
+                                  <Icon /> {link.name}
+                                </Link>
+                              </Button>
+                            );
+                          })}
+                        </HStack>
+
+                        <Button
+                          variant="subtle"
                         >
-                          Zobacz projekt
-                        </Link>
-                      </Button>
+                          <Link
+                            variant="plain"
+                            href={project.projectLink}
+                            target="_blank"
+                          >
+                            Zobacz projekt
+                          </Link>
+                        </Button>
+                      </Stack>
                     </Card.Footer>
                   </Box>
                 </Card.Root>

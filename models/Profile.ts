@@ -20,13 +20,17 @@ export class Badge {
   }
 }
 
+export type LinkType = 'frontend' | 'backend' | 'docs'
+
 export class Link {
+  type: LinkType
   name: string
   url: string
 
-  constructor(name: string, url: string) {
+  constructor(name: string, url: string, type: LinkType) {
     this.name = name
     this.url = url
+    this.type = type
   }
 }
 
