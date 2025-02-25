@@ -20,7 +20,7 @@ type Props = {
 
 const Experience = ({socialMedia, mainColor}: Props) => {
   return (
-    <Container maxW={"3xl"} id="contact">
+    <Container maxW={"4xl"} id="contact">
       <Stack
         as={Box}
         // textAlign={"center"}

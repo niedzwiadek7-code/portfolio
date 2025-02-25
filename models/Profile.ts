@@ -1,4 +1,5 @@
 import {DateRange} from "@/models/DateRange";
+import {Slide} from "@/models/Slide";
 
 export class Section {
   id: string
@@ -41,6 +42,7 @@ export class Project {
   projectLink: string
   githubLinks: Link[]
   badges: Badge[]
+  presentation?: Slide[]
 
   constructor(
     name: string,
@@ -48,7 +50,8 @@ export class Project {
     description: string,
     projectLink: string,
     githubLinks: Link[],
-    badges: Badge[]
+    badges: Badge[],
+    presentation?: Slide[]
   ) {
     this.name = name
     this.image = image
@@ -56,6 +59,7 @@ export class Project {
     this.projectLink = projectLink
     this.githubLinks = githubLinks
     this.badges = badges
+    this.presentation = presentation
   }
 }
 

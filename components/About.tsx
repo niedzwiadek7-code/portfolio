@@ -8,7 +8,7 @@ type Props = {
 
 const About = ({profile}: Props) => {
   return (
-    <Container maxW={"3xl"} id="about">
+    <Container maxW={"4xl"} id="about">
       <Stack
         as={Box}
         textAlign={"center"}

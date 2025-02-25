@@ -28,7 +28,7 @@ const MainSection: React.FC<Props> = ({
   return (
     <Container
       height={"100vh"}
-      maxW={"3xl"}
+      maxW={"4xl"}
       id="mainSection"
       display={"flex"}
       flexDirection={"column"}

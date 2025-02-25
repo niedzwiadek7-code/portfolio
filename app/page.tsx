@@ -78,7 +78,24 @@ Zaufaj mi, jeśli chcesz wyróżnić swoją markę w sieci. Niezależnie od tego
           new Badge('NestJS', 'green'),
           new Badge('Vercel', 'black'),
           new Badge('RWD', 'black'),
-        ]
+        ],
+        // [
+        //   {
+        //     image: 'https://travel-app-frontend-henna.vercel.app/assets/basic-CA30UGMq.jpg',
+        //     title: 'Strona główna aplikacji',
+        //     description: 'Strona główna aplikacji, na której użytkownik może zobaczyć swoje plany wycieczek, a także dodawać nowe.'
+        //   },
+        //   {
+        //     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC3f4HK69-Cbk89lqquZIbzWOsX2mToUjQsg&s',
+        //     title: 'Jakiś generator losowy',
+        //     description: 'Jakiś generator losowy, który nie ma nic wspólnego z aplikacją'
+        //   },
+        //   {
+        //     image: 'https://miro.medium.com/v2/resize:fit:1400/1*1BUIofZgqVuR6nj8LbrRtQ.jpeg',
+        //     title: 'dużo znaczków',
+        //     description: 'dużo znaczków, które nie mają nic wspólnego z aplikacją'
+        //   }
+        // ]
       ),
       new Project(
         'Explore Places',
@@ -185,7 +202,7 @@ Zaufaj mi, jeśli chcesz wyróżnić swoją markę w sieci. Niezależnie od tego
         mainColor={profile.mainColor}
       />
       <Projects
-        projects={profile.projects}
+        projects={JSON.parse(JSON.stringify(profile.projects))}
         mainColor={profile.mainColor}
       />
       <Contact
