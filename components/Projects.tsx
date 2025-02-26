@@ -147,7 +147,7 @@ const Projects = ({ projects, mainColor }: Props) => {
                     </HStack>
 
                     <HStack>
-                      {project.presentation && (
+                      {(project.presentation && project.presentation.length) ? (
                         <Button
                           variant="subtle"
                           colorScheme={mainColor}
@@ -156,7 +156,7 @@ const Projects = ({ projects, mainColor }: Props) => {
                           <LuPresentation />
                           Zaprezentuj
                         </Button>
-                      )}
+                      ) : ''}
 
                       <Button variant="subtle">
                         <Link

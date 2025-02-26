@@ -1,0 +1,100 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Badges {
+  id    Int    @id @default(autoincrement())
+  name  String @unique
+  color String
+
+  UserExperiences UserExperienceBadge[]
+  Projects        ProjectBadge[]
+}
+
+model ProjectBadge {
+  id        Int      @id @default(autoincrement())
+  Badges    Badges?  @relation(fields: [badgesId], references: [id])
+  badgesId  Int?
+  Project   Project? @relation(fields: [projectId], references: [id])
+  projectId Int?
+}
+
+model UserExperienceBadge {
+  id               Int             @id @default(autoincrement())
+  Badges           Badges?         @relation(fields: [badgesId], references: [id])
+  badgesId         Int?
+  UserExperience   UserExperience? @relation(fields: [userExperienceId], references: [id])
+  userExperienceId Int?
+}
+
+model UserExperience {
+  id          Int                   @id @default(autoincrement())
+  company     String
+  role        String
+  from        DateTime
+  to          DateTime
+  description String
+  logo        String?
+  badges      UserExperienceBadge[]
+  User        User?                 @relation(fields: [userId], references: [id])
+  userId      Int?
+}
+
+model SocialMedia {
+  id     Int    @id @default(autoincrement())
+  name   String
+  url    String
+  User   User?  @relation(fields: [userId], references: [id])
+  userId Int?
+}
+
+model Link {
+  id        Int      @id @default(autoincrement())
+  type      String
+  url       String
+  Project   Project? @relation(fields: [projectId], references: [id])
+  projectId Int?
+}
+
+model Slide {
+  id          Int      @id @default(autoincrement())
+  image       String
+  description String
+  title       String
+  Project     Project? @relation(fields: [projectId], references: [id])
+  projectId   Int?
+}
+
+model Project {
+  id           Int            @id @default(autoincrement())
+  title        String
+  image        String
+  description  String
+  project_link String
+  github_links Link[]
+  badges       ProjectBadge[]
+  presentation Slide[]
+  User         User?          @relation(fields: [userId], references: [id])
+  userId       Int?
+}
+
+model User {
+  id              Int              @id @default(autoincrement())
+  email           String           @unique
+  password        String
+  first_name      String           @default("")
+  last_name       String           @default("")
+  main_color      String
+  name            String
+  description     String
+  image           String?
+  about           String
+  social_media    SocialMedia[]
+  user_experience UserExperience[]
+  projects        Project[]
+}
