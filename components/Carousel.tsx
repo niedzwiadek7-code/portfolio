@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, Image, Text, IconButton, HStack, VStack } from "@chakra-ui/react";
-import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Slide } from "@/models/Slide";
 
 type CarouselProps = {
@@ -70,7 +70,7 @@ const Carousel: React.FC<CarouselProps> = ({
               _hover={{ bg: "rgba(0, 0, 0, 0.6)" }}
               borderRadius="full"
             >
-              <ChevronLeftIcon boxSize={6} />
+              <FaChevronLeft />
             </IconButton>
             <IconButton
               aria-label="Następny slajd"
@@ -84,7 +84,7 @@ const Carousel: React.FC<CarouselProps> = ({
               _hover={{ bg: "rgba(0, 0, 0, 0.6)" }}
               borderRadius="full"
             >
-              <ChevronRightIcon boxSize={6} />
+              <FaChevronRight />
             </IconButton>
           </>
         )}

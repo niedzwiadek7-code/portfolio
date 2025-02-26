@@ -27,7 +27,7 @@ import {
 } from "@/components/ui/dialog";
 import Carousel from "@/components/Carousel";
 import {Slide} from "@/models/Slide";
-import {CgEye, CgPresentation} from "react-icons/cg";
+import {CgEye} from "react-icons/cg";
 import {LuPresentation} from "react-icons/lu";
 
 type Props = {
