@@ -10,8 +10,8 @@ type Params = {
   id: string
 }
 
-const Demo = async ({ params }: { params: Params }) => {
-  const { id } = params
+const Demo = async ({ params }: { params: Promise<Params> }) => {
+  const { id } = await params
 
   const profileResponse = await fetch(
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/user/${id}`,

@@ -9,9 +9,9 @@ type Params = {
 
 export async function GET(
   req: Request,
-  { params }: { params: Params }
+  { params }: { params: Promise<Params> }
 ) {
-  const { id } = params
+  const { id } = await params
 
   const user = await prisma.user.findUnique({
     where: {
@@ -53,7 +53,7 @@ export async function GET(
   })
 
   if (!user) {
-    return new Response('Not found', {status: 404})
+    return NextResponse.json('Not found', {status: 404})
   }
 
   const profile = new Profile(
