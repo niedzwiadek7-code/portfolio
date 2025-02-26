@@ -1,5 +1,5 @@
 import React from 'react'
-import {Experience as ExperienceModel} from "@/models";
+import {DateRange, Experience as ExperienceModel} from "@/models";
 import {
   Box,
   Container,
@@ -25,7 +25,6 @@ type Props = {
 }
 
 const Experience = ({experience, mainColor}: Props) => {
-  console.log(experience[0].dateRange.toString())
   return (
     <Container maxW={"4xl"} id="experience">
       <Stack
@@ -80,7 +79,7 @@ const Experience = ({experience, mainColor}: Props) => {
                       <div>
                         <TimelineTitle>{exp.title}</TimelineTitle>
                         <TimelineDescription>
-                          {exp.dateRange.toString()}
+                          {DateRange.createFromObject(exp.dateRange).toString()}
                         </TimelineDescription>
                       </div>
 

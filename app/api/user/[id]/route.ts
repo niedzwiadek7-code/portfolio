@@ -9,12 +9,9 @@ type Params = {
 
 export async function GET(
   req: Request,
-  {
-    params: paramsPromise
-  }: Promise<Params>
+  { params }: { params: Params }
 ) {
-  const params = await paramsPromise
-  const { id } = params
+  const { id } = await params
 
   const user = await prisma.user.findUnique({
     where: {
@@ -79,7 +76,7 @@ export async function GET(
         ue.to,
       ),
       ue.role,
-      ue.logo,
+      ue.logo || '',
       ue.description,
       ue.badges.map(b => ({
         name: b.Badges?.name || '',
