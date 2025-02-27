@@ -55,8 +55,8 @@ const About = ({profile}: Props) => {
         </Box>
         <Text
           color={"gray.600"}
-          // fontSize={"lg"}
           textAlign={"justify"}
+          whiteSpace={"pre-line"}
         >
           {profile.about}
         </Text>

@@ -61,7 +61,11 @@ const Experience = ({ experience, mainColor }: Props) => {
               <Text fontSize="lg" fontWeight="semibold" mb={2}>
                 {exp.role}
               </Text>
-              <Text fontSize="sm" mb={2}>
+              <Text
+                fontSize="sm"
+                mb={2}
+                whiteSpace="pre-line"
+              >
                 {exp.description}
               </Text>
               <Stack direction="row" gap={2} wrap="wrap">
