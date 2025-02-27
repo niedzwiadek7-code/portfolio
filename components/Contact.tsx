@@ -4,9 +4,7 @@ import React from 'react'
 import {SocialMedia} from "@/models";
 import {
   Box,
-  Container,
   HStack,
-  Separator,
   Stack,
   Text,
   Heading, Center, Icon, Link,
