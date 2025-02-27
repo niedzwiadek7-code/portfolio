@@ -1,9 +1,10 @@
 'use client'
 
 import React from "react";
-import {Box, Button, Container, createIcon, Heading, Icon, Link, Stack, Text} from "@chakra-ui/react";
-import {Profile} from "@/models";
-import {useColorModeValue} from "@/components/ui/color-mode";
+import { Box, Button, Container, createIcon, Heading, Icon, Link, Stack, Text } from "@chakra-ui/react";
+import { Profile } from "@/models";
+import { useColorModeValue } from "@/components/ui/color-mode";
+import { motion } from "framer-motion";
 
 type Props = {
   profile: Profile;
@@ -22,50 +23,46 @@ const Arrow = createIcon({
   ),
 });
 
-const MainSection: React.FC<Props> = ({
-  profile
-}) => {
+const MotionIcon = motion(Icon);
+
+const MainSection: React.FC<Props> = ({ profile }) => {
   return (
     <Container
-      height={"100vh"}
-      maxW={"4xl"}
+      height="100vh"
+      maxW="4xl"
       id="mainSection"
-      display={"flex"}
-      flexDirection={"column"}
-      justifyContent={"center"}
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
       padding={{ base: 12 }}
     >
-      <Stack
-        as={Box}
-        textAlign={"center"}
-        gap={{ base: 8, md: 14 }}
-      >
+      <Stack as={Box} textAlign="center" gap={{ base: 8, md: 14 }}>
         <Heading
           fontWeight={600}
           fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
-          lineHeight={"120%"}
+          lineHeight="120%"
         >
           Hej, tu {profile.firstName} <br />
-          <Text as={"span"} color={`${profile.mainColor}.400`}>
+          <Text as="span" color={`${profile.mainColor}.400`}>
             {profile.headerRole}
           </Text>
         </Heading>
         <Text
-          color={"gray.500"}
+          color="gray.500"
           fontSize={{ base: "lg", sm: "xl", md: "2xl" }}
         >
           {profile.headerDesc}
         </Text>
         <Stack
-          direction={"column"}
+          direction="column"
           gap={3}
-          align={"center"}
-          alignSelf={"center"}
-          position={"relative"}
+          align="center"
+          alignSelf="center"
+          position="relative"
         >
           <Button
             bg={`${profile.mainColor}.400`}
-            rounded={"full"}
+            rounded="full"
             px={6}
             _hover={{
               bg: `${profile.mainColor}.500`,
@@ -73,43 +70,41 @@ const MainSection: React.FC<Props> = ({
           >
             <Link
               href={profile.socialMedia.linkedin}
-              variant='plain'
+              variant="plain"
               target="_blank"
               color={useColorModeValue("white", "gray.800")}
             >
               Znajdź mnie na LinkedIn!
             </Link>
           </Button>
-          <Button
-            variant="ghost"
-            colorScheme={"blue"}
-            size={"sm"}
-          >
+          <Button variant="ghost" colorScheme="blue" size="sm">
             <Link
               href={profile.socialMedia.mail}
-              variant='plain'
+              variant="plain"
               target="_blank"
             >
               Skontaktuj się ze mną
             </Link>
           </Button>
           <Box>
-            <Icon
+            <MotionIcon
               color={useColorModeValue("gray.800", "gray.300")}
               w={71}
-              position={"absolute"}
+              position="absolute"
               right={-71}
-              top={"10px"}
+              top="10px"
+              animate={{ x: [0, 10, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
             >
               <Arrow />
-            </Icon>
+            </MotionIcon>
             <Text
-              fontSize={"lg"}
-              fontFamily={"Caveat"}
-              position={"absolute"}
-              right={"-85px"}
-              top={"-15px"}
-              transform={"rotate(10deg)"}
+              fontSize="lg"
+              fontFamily="Caveat"
+              position="absolute"
+              right="-85px"
+              top="-15px"
+              transform="rotate(10deg)"
             >
               Click me!
             </Text>
@@ -117,7 +112,7 @@ const MainSection: React.FC<Props> = ({
         </Stack>
       </Stack>
     </Container>
-  )
-}
+  );
+};
 
-export default MainSection
+export default MainSection;
