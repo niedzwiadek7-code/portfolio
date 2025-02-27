@@ -179,11 +179,9 @@ const Projects = ({ projects, mainColor }: Props) => {
         <DialogRoot
           open={isOpen}
           closeOnInteractOutside
-          size='lg'
+          size='xl'
         >
-          <DialogContent
-            width='95%'
-          >
+          <DialogContent>
             <DialogHeader>
               <DialogCloseTrigger
                 onClick={handleClose}

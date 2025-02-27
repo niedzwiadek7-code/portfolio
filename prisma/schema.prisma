@@ -66,8 +66,11 @@ model Slide {
   image       String
   description String
   title       String
+  order       Int
   Project     Project? @relation(fields: [projectId], references: [id])
   projectId   Int?
+
+  @@unique([order, projectId])
 }
 
 model Project {

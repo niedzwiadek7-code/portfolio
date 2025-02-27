@@ -50,7 +50,7 @@ const Carousel: React.FC<CarouselProps> = ({
         <Image
           src={currentSlide.image}
           alt={currentSlide.title}
-          objectFit="cover"
+          objectFit="contain"
           width="100%"
           height={{ base: "200px", md: "400px" }}
           borderRadius="md"

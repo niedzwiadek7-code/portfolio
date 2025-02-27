@@ -100,7 +100,7 @@ export async function GET(
         name: b.Badges?.name || '',
         color: b.Badges?.color || '',
       })),
-      p.presentation,
+      p.presentation.sort((a, b) => a.order - b.order),
     )),
   )
 
